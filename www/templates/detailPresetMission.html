@@ -1,0 +1,56 @@
+<ion-view> 
+  <ion-nav-title>
+  	Detail Missions
+  </ion-nav-title>
+
+ <ion-content class="padding">
+    <ion-subheader-bar class="">
+      <h2 class="title">{{email}}</h2>
+      <h2 class="title">{{username}}</h2>
+    </ion-subheader-bar>
+    
+    <div class="item item-divider">Mission</div>
+      <a class="item">
+        {{detailMission.name}}
+        <p></p>
+        {{detailMission.description}}
+      </a>
+    </div>
+    <div class="item item-divider">Start time</div>
+      <a class="item">
+        {{detailMission.startTime}}
+      </a>
+    </div>
+    <div class="item item-divider">End time</div>
+      <a class="item">
+        {{detailMission.endTime}}
+      </a>
+    </div>
+    <div class="item item-divider">Sensor</div>
+      <a class="item">
+        {{detailMission.Sensor.id}} {{detailMission.Sensor.name}}
+        <p></p>
+        {{detailMission.Sensor.description}}
+      </a>
+    </div>
+    <div class="item item-divider">Drone</div>
+      <a class="item">
+        {{detailMission.Drone.id}} {{detailMission.Drone.name}}
+        <p></p>
+        {{detailMission.Drone.description}}
+      </a>
+    </div>
+    <div class="item item-divider">Personnel</div>
+      <a class="item" ng-repeat="item in detailMission.Personnels">
+        {{item.id}} {{item.firstName}} {{item.lastName}}
+        <p></p>
+        {{item.email}}
+        <p></p>
+        {{item.phone_number}}
+      </a>
+    </div>
+    <button class="button button-block button-calm" ng-click="next()">
+      Next
+    </button>
+  </ion-content>
+</ion-view>

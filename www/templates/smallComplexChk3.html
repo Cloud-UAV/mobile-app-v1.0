@@ -1,0 +1,35 @@
+<ion-view>
+  <ion-nav-title>
+  	Compliance
+  </ion-nav-title>
+
+ <ion-content class="padding">
+ <h3>OPERATIONAL CONDITIONS –SMALL UAV, LIMITED ENVIRONMENT</h3>
+
+ 	<ion-checkbox ng-model="check.chk1" disabled="true" class="checkbox-calm">
+    UAV won’t be flown with snow, ice, or frost on critical surfaces and must be inspected for these by the pilot or a designated crew member before operations. Pilot must inform crew members before anti-icing or de-icing occurs. If icing conditions are forecast or likely, operations cannot occur unless the pilot deems the aircraft has the necessary equipment to operate or icing conditions no longer exist.
+ 	</ion-checkbox>
+ 	<ion-checkbox ng-model="check.chk2" disabled="true" class="checkbox-calm">
+    Technical records of flight time of each flight, total aircraft flight time, number of landings since date of manufacture, and particulars of maintenance, modifications, and repairs will be kept.
+ 	</ion-checkbox>
+
+  <ion-radio ng-model="check.choice1" ng-value="true" class="checkbox-calm">Aircraft is Transport-Canada compliant OR</ion-radio>
+  <ion-radio ng-model="check.choice1" ng-value="false" ng-checked="choice1.checked" class="checkbox-calm">Aircraft is not compliant but was bought before Dec 15, 2017, and will not operate above 300 feet AGL, more than 0.5 nm from pilot, within 0.5 nm, over, or within a built-up area, or in Class C, D, or E airspace.B</ion-radio>
+
+  <ion-checkbox ng-model="check.chk3"  ng-value="false" ng-show="check.choice1" class="checkbox-calm">
+    Max altitude: 400 feet above ground level, OR 100 feet above a building or structure if laterally within 200 feet of it and more than 3 nm from an aerodrome
+  </ion-checkbox>
+  <ion-checkbox ng-model="check.chk4" ng-value="false" ng-show="check.choice1" class="checkbox-calm">
+    Max distance from pilot: 1 nautical mile (1.8 km)
+  </ion-checkbox>
+
+ 	<button ng-show="!check.choice1" ng-disabled="!check.chk1 || !check.chk2 || check.choice1" class="button button-block button-calm" ng-click="next()">
+    Next
+  </button>
+  <button  ng-show="check.choice1" ng-disabled="!check.chk1 || !check.chk2 || !check.chk3 || !check.chk4" class="button button-block button-calm" ng-click="next()">
+    Next
+  </button>
+
+
+  </ion-content>
+</ion-view>

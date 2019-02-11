@@ -1,0 +1,27 @@
+<ion-view>
+  <ion-nav-title>
+    Review Missions
+  </ion-nav-title>
+
+ <ion-content class="padding">
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="img/mcfly.jpg">
+        <h2>{{username}}</h2>
+        <p>{{email}}</p>
+      </div>
+    </div>
+
+
+    <div class="list">
+      <a class="item item-icon-left item-icon-right" ng-repeat="item in project"
+      href="#/reviewMissions/{{item.id}}">
+        <i class="icon icon-calm ion-android-list"></i>
+        {{item.name}}
+        <p></p>
+        {{item.description}}
+        <i class="icon icon-calm ion-android-arrow-dropright"></i>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

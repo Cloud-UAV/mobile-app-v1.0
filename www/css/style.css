@@ -1,0 +1,15 @@
+/* Empty. Add your own CSS if you like */
+.background.scroll-content {
+    //background: url('../img/cloud.jpeg') no-repeat;
+    background-size: cover;
+    background-size: 1000px 1000px;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+.my-modal-list {
+    list-style-type: disc;
+    padding-left:1em
+}

@@ -1,0 +1,44 @@
+<ion-view>
+  <ion-nav-title>
+    Compliance
+  </ion-nav-title>
+
+  <ion-content class="padding">
+    <h3>OPERATIONAL CONDITIONS – SMALL UAV, LIMITED ENVIRONMENT</h3>
+    <p>The following procedures and equipment must be established and available to the pilot immediately, at any point during the operation. Check them only if these procedures are established and available.</p>
+
+    <div class="list">
+
+      <ion-list>
+        <ion-checkbox class="checkbox-calm" ng-repeat="item in items track by $index" class="checkbox-calm" type="checkbox" id="{{item.id}}" ng-model="item.checked" ng-change="updateCheckBox(items)">
+          {{ item.name }}
+          <ul class="my-modal-list">
+            <div ng-if=item.name2>
+              <li>{{item.name2 }}</li>
+            </div>
+            <div ng-if=item.name3>
+              <li>{{item.name3 }}</li>
+            </div>
+            <div ng-if=item.name4>
+              <li>{{item.name4 }}</li>
+            </div>
+            <div ng-if=item.name5>
+              <li>{{item.name5 }}</li>
+            </div>
+            <div ng-if=item.name6>
+              <li>{{item.name6 }}</li>
+            </div>
+            <div ng-if=item.name7>
+              <li>{{item.name7 }}</li>
+            </div>
+
+          </ul>
+        </ion-checkbox>
+      </ion-list>
+
+      <button ng-disabled="!disabled" class="button button-block button-calm" ng-click="next()">
+    Next
+    </button>
+
+  </ion-content>
+</ion-view>

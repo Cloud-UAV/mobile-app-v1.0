@@ -1,0 +1,76 @@
+<ion-view>
+  <ion-nav-title>
+    Summary
+  </ion-nav-title>
+
+  <ion-content class="padding">
+    <h3>Post-Flight Prompts and Mission Summary</h3>
+
+    <div class="card" ng-hide="!disabled">
+      <div class="item item-divider item-icon-left">
+        <i class="icon ion-information-circled icon-calm"></i> UAV:
+      </div>
+      <div class="item item-text-wrap">
+        {{uav}}
+      </div>
+
+      <div class="item item-divider item-icon-left">
+        <i class="icon ion-paper-airplane icon-calm"></i> Drone:
+      </div>
+      <div class="item item-text-wrap">
+        {{drone}}
+      </div>
+
+      <div class="item item-divider item-icon-left">
+        <i class="icon ion-wifi icon-calm"></i> Sensor:
+      </div>
+      <div class="item item-text-wrap">
+        {{sensor}}
+      </div>
+
+      <div class="item item-divider item-icon-left">
+        <i class="icon ion-person icon-calm"></i> Personnel:
+      </div>
+      <div class="item item-text-wrap">
+        <ion-list ng-repeat="item in personnel track by $index">
+          <div class="font-weight-bold">{{ item.name }}</div>
+          Role:{{ " "+item.role }}
+          <br>
+        </ion-list>
+      </div>
+
+      <div class="item item-divider item-icon-left">
+        <i class="icon ion-location icon-calm"></i> Location:
+      </div>
+      <div class="item item-text-wrap">
+        {{location}}
+      </div>
+
+      <div class="item item-divider item-icon-left">
+        <i class="icon ion-ios-copy icon-calm"></i> Compliance Category:
+      </div>
+      <div class="item item-text-wrap">
+        {{compliance}}
+      </div>
+
+      <div class="item item-divider item-icon-left item-icon-right">
+        <i class="icon ion-android-time icon-calm"></i> Total Duration:
+        <i class="icon ion-edit icon-calm" ng-click="modifyTime()"></i>
+      </div>
+      <div class="item item-text-wrap">
+        {{totalDuration}}
+      </div>
+    </div>
+
+    <ion-list ng-hide="disabled" ng-repeat="item in items track by $index">
+      <ion-checkbox class="checkbox-calm" type="checkbox" id="{{item.id}}" ng-model="item.checked" ng-change="updateCheckBox(items)">
+        {{ item.name }}
+      </ion-checkbox>
+    </ion-list>
+
+    <button ng-disabled="!disabled" class="button button-block button-calm" ng-click="next()">
+      DONE
+    </button>
+
+  </ion-content>
+</ion-view>

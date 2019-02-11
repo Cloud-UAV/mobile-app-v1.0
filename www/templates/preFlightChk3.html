@@ -1,0 +1,40 @@
+<ion-view>
+  <ion-nav-title>
+    Compliance
+  </ion-nav-title>
+
+  <ion-content class="padding">
+    <h3>PRE-FLIGHT SITE SURVEY  (3/3)</h3>
+    <p>The pilot and all essential crew members of the operation have knowledge of the following parameters prior to take-off:</p>
+
+    <ion-list ng-repeat="item in items track by $index">
+      <ion-checkbox class="checkbox-calm" type="checkbox" id="{{item.id}}" ng-model="item.checked" ng-change="updateCheckBox(items)">
+        {{ item.name }}
+      </ion-checkbox>
+      <label class="item item-input">
+        <input type="text" name="" placeholder="Comments"  ng-model="item.comm" maxlength="120"></input>
+      </label>
+      <br/>
+    </ion-list>
+
+    <ion-list ng-repeat="item in userItems track by $index">
+      <ion-checkbox class="checkbox-calm" type="checkbox" id="{{item.id}}" ng-model="item.checked" ng-change="updateCheckBox(items)">
+        {{ item.name }}
+      </ion-checkbox>
+      <button style="position: absolute; top: 5px; right: 4px; z-index: 9999999;" class="button button-assertive icon ion-trash-a" ng-model="item" ng-click="delUserChk($index)"></button>
+
+      <label class="item item-input">
+        <input type="text" name="" placeholder="Comments"  ng-model="item.comm" maxlength="120"></input>
+      </label>
+    </ion-list>
+
+    <div class="padding-top">
+      <button class="button button-royal icon ion-plus-circled" ng-model="addItem" ng-click="addNew()">  Add New</button>
+    </div>
+
+    <button ng-disabled="!disabled" class="button button-block button-calm" ng-click="next()">
+    SITE SURVEY COMPLETE
+    </button>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,62 @@
+<ion-view>
+  <ion-nav-buttons side="left">
+    <button class="button button-clear" ng-click="doTheBack()">
+    <!-- <i class="icon ion-ios-arrow-back"></i> -->
+    <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    New Mission
+  </ion-nav-title>
+
+  <ion-content class="padding">
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="img/mcfly.jpg">
+        <h2>{{username}}</h2>
+        <p>{{email}}</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <label class="item item-input item-select">
+          <span class="input-label">Project</span>
+          <select ng-model="selectedProject" ng-change="getPrj(selectedProject)">
+            <option ng-repeat="option in project" value="{{option.id}}">{{option.name}}</option>
+          </select>
+      </label>
+    </div>
+    <div class="card">
+      <label class="item item-input item-stacked-label">
+          <span class="input-label">Mission Name</span>
+          <input ng-model="mission.name" type="text" placeholder="UAV mission" required ng-change="checkMissionName()" maxlength="20">
+      </label>
+    </div>
+    <div class="card multiselect-placeholder">
+      <label class="item item-input item-stacked-label">
+          <span class="input-label">Drone</span>
+      </label>
+      <multiselect class="multiselect-item" header-text="Select Drone" items="droneList" text-property="name" value-property="id" is-translate="false" text="Choose Drone" value-changed="getDrone(value)" default-value="default"></multiselect>
+    </div>
+
+    <div class="card multiselect-placeholder">
+      <label class="item item-input item-stacked-label">
+          <span class="input-label">Sensor</span>
+      </label>
+      <multiselect class="multiselect-item" header-text="Select Sensor" items="sensorList" text-property="name" value-property="id" is-translate="false" text="Choose Sensors" value-changed="getSensor(value)" default-value="default"></multiselect>
+    </div>
+
+    <div class="card multiselect-placeholder">
+      <label class="item item-input item-stacked-label">
+          <span class="input-label">Personnel</span>
+      </label>
+      <multiselect class="multiselect-item" header-text="Select Personnel" items="personnelList" text-property="firstName" value-property="id" is-translate="false" text="Choose Personnel" value-changed="getPersonnel(value)" default-value="default"></multiselect>
+    </div>
+
+    <div class="button-bar">
+      <button class="button button-block button-balanced icon-left ion-location" ng-click="getMap()">Set Location</button>
+      <button ng-disabled="!disabled" class="button button-block button-calm" ng-click="next()">Next</button>
+    </div>
+
+  </ion-content>
+</ion-view>

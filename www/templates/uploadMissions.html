@@ -1,0 +1,32 @@
+<ion-view>
+  <ion-nav-buttons side="left">
+    <button class="button button-clear" ng-click="doTheBack()" >
+    <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    Upload Missions
+  </ion-nav-title>
+
+ <ion-content class="padding">
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="img/mcfly.jpg">
+        <h2>{{username}}</h2>
+        <p>{{email}}</p>
+      </div>
+    </div>
+
+    <ion-list class="list">
+      <ion-checkbox class="item item-icon-left item-icon-right checkbox-calm" ng-repeat="item in project | orderBy: '-endTime'  track by $index" ng-click="selectedCheckBox(item)">
+        <!-- <i class="icon icon-calm ion-android-list"></i> -->
+        {{item.name}}
+        <p></p>
+      </ion-checkbox>
+    </ion-list>
+    <button ng-disabled="!disabled || !selected" class="button button-block button-calm" ng-click="uploadAll()">
+    SYNC
+    </button>
+    {{msg}}
+  </ion-content>
+</ion-view>

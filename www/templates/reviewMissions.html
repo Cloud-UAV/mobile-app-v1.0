@@ -1,0 +1,28 @@
+<ion-view>
+  <ion-nav-buttons side="left">
+    <button class="button button-clear" ng-click="doTheBack()" >
+    <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    Missions
+  </ion-nav-title>
+  <ion-content  class="padding">
+  <div class="list card">
+    <div class="item item-avatar">
+      <img src="img/mcfly.jpg">
+      <h2>{{username}}</h2>
+      <p>{{email}}</p>
+    </div>
+  </div>
+    <div class="list">
+      <a class="item item-icon-left item-icon-right" ng-repeat="item in missions | orderBy: '-endTime'" href="#/detailPrevMission/{{item.id}}">
+        <i class="icon icon-calm ion-android-list"></i>
+        {{item.name}}
+        <p></p>
+        {{item.description}}
+        <i class="icon icon-calm ion-android-arrow-dropright"></i>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

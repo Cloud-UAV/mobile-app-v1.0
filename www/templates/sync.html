@@ -1,0 +1,29 @@
+<ion-view>
+  <ion-nav-title>
+  	Sync
+  </ion-nav-title>
+  <ion-content  class="padding">
+ 	<div class="list card">
+    <div class="item item-avatar">
+      <img src="img/mcfly.jpg">
+      <h2>{{username}}</h2>
+      <p>{{email}}</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item item-text-wrap">
+      <h3>Maxium: {{stroeAmoutMission}} missions in mobile app</h3>
+      <h3>Current: {{mission}} mission</h3>
+    </div>
+  </div>
+
+  <button ng-disabled="!disabled" class="button button-block button-calm" ng-click="syncNow()">
+    Sync Now
+  </button>
+
+  <button class="button button-block button-royal" ng-click="syncLater()">
+    Sync Later
+  </button>
+</ion-content>
+</ion-view>

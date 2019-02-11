@@ -1,0 +1,21 @@
+<ion-view> 
+  <ion-nav-title>
+  	Compliance
+  </ion-nav-title>
+
+ <ion-content class="padding">
+ <h3>OPERATIONAL CONDITIONS –SMALL UAV, LIMITED ENVIRONMENT</h3>
+ 	<div class="list">
+
+    <ion-list>
+      <ion-checkbox class="checkbox-calm" ng-repeat="item in items track by $index" class="checkbox-calm" type="checkbox" id="{{item.id}}" ng-model="item.checked" ng-change="updateCheckBox(items)">
+        {{ item.name }}
+      </ion-checkbox>
+    </ion-list>
+
+ 	  <button ng-disabled="!disabled" class="button button-block button-calm" ng-click="next()">
+    Next
+    </button>
+
+  </ion-content>
+</ion-view>

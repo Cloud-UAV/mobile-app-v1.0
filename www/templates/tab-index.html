@@ -1,0 +1,38 @@
+<ion-view view-title="Home">
+    <ion-content class="padding">
+    <div class="list card">
+
+      <div class="item item-avatar">
+        <img src="img/mcfly.jpg">
+        <h2>{{username}}</h2>
+        <p>{{email}}</p>
+      </div>
+
+      <div class="item item-body">
+          <p>Cumulative Flight Time: {{cumulativeFlightTime}}</p>
+          <p>Number of missions: {{missions}}</p>
+      </div>
+    </div>
+    <div class="list card">
+      <a href="#/tab/newMission" class="item item-icon-left">
+        <i class="icon icon-calm ion-android-add-circle"></i>
+        New Mission
+      </a>
+
+      <a href="#/tab/reviewProject" class="item item-icon-left">
+        <i class="icon icon-calm ion-android-list"></i>
+        Review Previous Missions
+      </a>
+
+      <a href="#/tab/detailedUser" class="item item-icon-left">
+        <i class="icon icon-calm ion-person"></i>
+        Detailed User Stats
+      </a>
+      <a href="#/uploadMissions" class="item item-icon-left">
+        <i class="icon icon-calm ion-upload"></i>
+        Upload missions
+      </a>
+    </div>
+
+    </ion-content>
+</ion-view>

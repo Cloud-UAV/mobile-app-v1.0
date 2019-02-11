@@ -1,0 +1,26 @@
+<ion-view>
+  <ion-nav-title>
+    <a class="icon-left ion-chevron-left" ng-click='doTheBack()'>
+      Back
+    </a>
+    Detail Missions
+  </ion-nav-title>
+
+ <ion-content class="padding">
+    <ion-subheader-bar class="">
+      <h2 class="title">{{email}}</h2>
+      <h2 class="title">{{username}}</h2>
+    </ion-subheader-bar>
+
+    <div class="list">
+      <a class="item item-icon-left item-icon-right" ng-repeat="item in project"
+      href="#/reviewMissionList/{{item.id}}">
+        <i class="icon icon-calm ion-android-list"></i>
+        {{item.name}}
+        <p></p>
+        {{item.description}}
+        <i class="icon icon-calm ion-android-arrow-dropright"></i>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

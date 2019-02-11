@@ -1,0 +1,29 @@
+<ion-view view-title="Welcome to CloudUAV">
+  <ion-content class="padding background" scroll="false">
+    <div class="padding">
+      <h2 align="center">
+        <!-- <img src="img/drone.png"> -->
+        <img src="img/CloudUAV64.png">
+      </h2>
+    </div>
+
+    <div class="list padding-top">
+    <label class="item item-input">
+      <span class="input-label">User name</span>
+      <input type="text" placeholder="Username" ng-model="data.username">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Password</span>
+      <input type="password" placeholder="Password" ng-model="data.password">
+    </label>
+
+    </div>
+    <button class="button button-block button-calm" ng-click="login()">Login</button>
+    <div class="row row-center">
+      <div class="col">
+        <label ng-show="disabled" style="color:white; font-size:16px; font-family:verdana;">Not a CloudUAV user yet?</label>
+        <a style="color:white; font-size:18px; font-family:verdana;" ng-show="disabled"  ng-href="http://clouduav.sensorup.com">Sign up here</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

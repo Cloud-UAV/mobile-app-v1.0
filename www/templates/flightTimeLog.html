@@ -1,0 +1,60 @@
+<ion-view>
+  <ion-nav-title>
+    {{title}}
+  </ion-nav-title>
+  <ion-content class="padding">
+    <h3></h3>
+
+    <div class="col text-center">
+      <h3 ng-hide="!timeLabel">Mission Time</h3>
+      <div ng-hide="!timeLabel" class="timelabel">
+        <timer ng-hide="!timeLabel"><span class="font-weight-bold">{{minutes}}</span> m : <span class="font-weight-bold">{{seconds}}</span> s</timer>
+      </div>
+    </div>
+
+    <div class="card" ng-hide="!continueBtn">
+      <div class="item item-divider item-icon-left">
+        <i class="icon ion-information-circled icon-calm"></i> Total Duration:
+      </div>
+      <div class="item item-text-wrap">
+        {{totalDuration}}
+      </div>
+      <div class="item item-divider item-icon-left">
+        <i class="icon ion-play icon-calm"></i> Start Time:
+      </div>
+      <div class="item item-text-wrap">
+        {{startTime}}
+      </div>
+      <div class="item item-divider item-icon-left">
+        <i class="icon ion-close-circled icon-calm"></i> End Time:
+      </div>
+      <div class="item item-text-wrap">
+        {{endTime}}
+      </div>
+    </div>
+
+
+
+    <!-- <button class="button button-block button-calm" ng-hide="startBtn" ng-click="start()">
+      START MISSION
+  </button> -->
+    <div class="padding text-center" ng-hide="startBtn">
+      START MISSION
+    </div>
+    <button class="button button-xxlarge button-block button-calm icon ion-play padding-vertical" ng-hide="startBtn" ng-click="start()"></button>
+
+    <button class="button button-block button-calm" ng-hide="!continueBtn" ng-click="continue()">
+      CONTINUE
+  </button>
+    <div class="row" ng-hide="!stopBtn">
+    <div class="row" ng-hide="!stopBtn">
+      <div class="col">
+        <button class="button button-large button-block icon-left ion-pause button-calm" ng-click="pause()">PAUSE</button>
+
+      </div>
+      <div class="col">
+        <button class="button button-large button-block icon-left ion-stop button-assertive" ng-click="stop()">STOP</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

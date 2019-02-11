@@ -1,0 +1,33 @@
+<ion-view>
+  <ion-nav-title>
+  	UAV Operation Category
+  </ion-nav-title>
+  <ion-content  class="padding">
+  <ion-subheader-bar class="">
+      <h2 class="title">{{email}}</h2>
+      <h2 class="title">{{username}}</h2>
+    </ion-subheader-bar>
+
+  <div class="card text-center">
+    <a class="item item-body" ng-click="next('Very Small UAV')">
+      <img class="full-image" src="img/drone/1.png">
+      <h2>Very Small UAV</h2>
+      <p>take-off weight between 250 grams and 1 kilogram</p>
+    </a>
+  </div>
+  <div class="card text-center">
+    <a class="item item-body" ng-click="next('Small UAV, Limited')">
+      <img class="full-image" src="img/drone/2.png">
+      <h2>Small UAV, Limited Environment </h2>
+      <p>take-off weight between 1 and 25 kilograms, Class G airspace</p>
+    </a>
+  </div>
+  <div class="card text-center">
+    <a class="item item-body" ng-click="next('Small UAV, Complex')">
+      <img class="full-image" src="img/drone/3.png">
+      <h2>Small UAV, Complex Environment</h2>
+      <p>take-off weight between 1 and 25 kilograms, in airspace other than Class G</p>
+    </a>
+  </div>
+</ion-content>
+</ion-view>
